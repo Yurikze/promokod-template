@@ -1,0 +1,17 @@
+body {
+  font-size: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 2px #ccc;
+          box-shadow: 0 0 2px #ccc;
+  -webkit-transition: all 4s ease;
+  transition: all 4s ease;
+}
+
+div {
+  background: url("../img/bike.jpg") 0 0 no-repeat;
+}
+@supports (-webkit-appearance:none){
+div{background:url("../img/bike.webp") 0 0 no-repeat}
+}
