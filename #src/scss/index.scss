@@ -1,8 +1,9 @@
+@import "./vendors/reset.scss";
+
 body {
-  font-size: 26px;
+  margin: 0;
+  font-size: 32px;
   display: flex;
-  box-shadow: 0 0 2px #ccc;
-  transition: all 4s ease;
 }
 
 div {
