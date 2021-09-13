@@ -132,17 +132,133 @@ table {
   border-spacing: 0;
 }
 
-body {
-  margin: 0;
-  font-size: 32px;
+@font-face {
+  font-family: 'Avenir';
+  src: url("../fonts/AvenirNextCyr-Regular.woff") format("woff"), url("../fonts/AvenirNextCyr-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url("../fonts/AvenirNextCyr-Bold.woff") format("woff"), url("../fonts/AvenirNextCyr-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
+.page {
+  min-width: 320px;
+  font-family: 'Avenir', sans-serif;
+}
+
+.page__scissors {
+  width: 28px;
+}
+
+.header {
+  border-bottom: 5px solid #6bc368;
+}
+
+.header__container {
+  padding: 15px 15px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1184px;
 }
 
-div {
-  background: url("../img/bike.jpg") 0 0 no-repeat;
+.header__menu-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.header__menu-bar {
+  display: inline-block;
+  height: 2px;
+  width: 22px;
+  background-color: #000;
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+
+.header__menu-bar:last-of-type {
+  margin-bottom: 0;
+}
+
+.header__search-btn {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.header__search-btn :hover {
+  cursor: pointer;
+}
+
+.header__search-img {
+  width: 30px;
+  height: 30px;
+}
+
+.main {
+  max-width: 1184px;
+}
+
+.lead {
+  background-color: #F9EEE7;
+  padding: 20px 10px;
+}
+
+.lead__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px dashed #6bc368;
+  padding: 20px;
+  position: relative;
+}
+
+.lead__title {
+  font-size: 25px;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.lead__subtitle {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.lead__scissors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(23vw, -50%) rotate(90deg);
+          transform: translate(23vw, -50%) rotate(90deg);
 }
 @supports (-webkit-appearance:none){
-div{background:url("../img/bike.webp") 0 0 no-repeat}
+
 }

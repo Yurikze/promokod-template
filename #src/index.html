@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.min.css">
+    <link rel="stylesheet" href="css/index.min.css" />
   </head>
   <body>
-    @@include('_header.html')
-    <main class="main">
-      <img src="./img/bike.jpg" alt="">
-    </main>
+    <div class="page">
+      @@include('_header.html')
+      <main class="main">
+        <section class="lead">
+          <div class="lead__card">
+            <h1 class="lead__title">Агрегатор промокодов, купонов, скидок и акций</h1>
+            <p class="lead__subtitle">Купоны, промокоды и скидки в магазинах России</p>
+            <img src="./img/scissors.svg" alt="Ножницы" class="page__scissors lead__scissors">
+          </div>
+        </section>
+      </main>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -13,14 +13,14 @@ const path = {
     html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
     css: source_folder + '/scss/index.scss',
     js: source_folder + '/js/script.js',
-    img: source_folder + '/img/**/*.{jpg, png, svg, ico, webp}',
-    fonts: source_folder + '/fonts/*.ttf',
+    img: source_folder + '/img/**/*.{png,jpg,svg,ico,webp}',
+    fonts: source_folder + '/fonts/*.{woff,woff2}',
   }, 
   watch: {
     html: source_folder + '/**/*.html',
     css: source_folder + '/scss/**/*.scss',
     js: source_folder + '/js/**/*.js',
-    img: source_folder + '/img/**/*.{jpg, png, svg, ico, webp}',
+    img: source_folder + '/img/**/*.{png,jpg,svg,ico,webp}',
   }, 
   clean: './' + project_folder +'/'
 }
@@ -113,6 +113,12 @@ function js() {
     .pipe(browsersync.stream())
 }
 
+function fonts() {
+  return src(path.src.fonts)
+  .pipe(dest(path.build.fonts))
+  .pipe(browsersync.stream())
+}
+
 function watchFiles() {
   gulp.watch([path.watch.html], html)
   gulp.watch([path.watch.css], css)
@@ -124,9 +130,10 @@ function clean() {
   return del(path.clean)
 }
 
-const build = gulp.series(clean, gulp.parallel(js, css, html, images))
+const build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts))
 const watch = gulp.parallel(build, watchFiles, browserSync)
 
+exports.fonts = fonts
 exports.images = images
 exports.js = js
 exports.css = css

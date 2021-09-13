@@ -1,11 +1,112 @@
 @import "./vendors/reset.scss";
 
-body {
-  margin: 0;
-  font-size: 32px;
-  display: flex;
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/AvenirNextCyr-Regular.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2');
+  font-weight: normal;
 }
 
-div {
-  background: url("../img/bike.jpg") 0 0 no-repeat;
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/AvenirNextCyr-Bold.woff') format('woff'),
+  url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2');
+  font-weight: bold;
 }
+
+
+$green: #6bc368;
+$lightOrange: #F9EEE7;
+
+.page {
+  min-width: 320px;
+  font-family: 'Avenir', sans-serif;
+  &__scissors {
+    width: 28px;
+  }
+}
+
+.header {
+  border-bottom: 5px solid $green;
+  &__container {
+    padding: 15px 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1184px;
+  }
+
+  &__menu-btn {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &__menu-bar {
+    display: inline-block;
+    height: 2px;
+    width: 22px;
+    background-color: #000;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__search-btn {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  &__search-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.main {
+  max-width: 1184px;
+}
+
+.lead {
+  background-color: $lightOrange;
+  padding: 20px 10px;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px dashed $green;
+    padding: 20px;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.1;
+  }
+
+  &__scissors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(23vw, -50%) rotate(90deg);
+  }
+}
+
