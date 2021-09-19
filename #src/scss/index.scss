@@ -1,26 +1,36 @@
-@import "./vendors/reset.scss";
+@import './vendors/reset.scss';
 
 @font-face {
   font-family: 'Avenir';
   src: url('../fonts/AvenirNextCyr-Regular.woff') format('woff'),
-  url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2');
+    url('../fonts/AvenirNextCyr-Regular.woff2') format('woff2');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Avenir';
   src: url('../fonts/AvenirNextCyr-Bold.woff') format('woff'),
-  url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2');
+    url('../fonts/AvenirNextCyr-Bold.woff2') format('woff2');
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/AvenirNextCyr-Demi.woff') format('woff'),
+    url('../fonts/AvenirNextCyr-Demi.woff2') format('woff2');
+  font-weight: 600;
+}
 
 $green: #6bc368;
-$lightOrange: #F9EEE7;
+$lightOrange: #f9eee7;
+$lightViolet: #efe7f4;
+$lightGreen: #e8f6e8;
+$orange: #ff7519;
 
 .page {
   min-width: 320px;
   font-family: 'Avenir', sans-serif;
+  color: rgb(47, 47, 47);
   &__scissors {
     width: 28px;
   }
@@ -74,11 +84,13 @@ $lightOrange: #F9EEE7;
 
 .main {
   max-width: 1184px;
+  margin: 0 auto;
 }
 
 .lead {
-  background-color: $lightOrange;
-  padding: 20px 10px;
+  background: linear-gradient($lightOrange 95%, $lightViolet);
+  padding: 40px 10px;
+  border: 0;
   &__card {
     display: flex;
     flex-direction: column;
@@ -110,3 +122,175 @@ $lightOrange: #F9EEE7;
   }
 }
 
+.stores {
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient($lightViolet 95%, $lightGreen);
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__li {
+    height: 75px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s, transform 0.1s;
+    border-radius: 3px;
+    &:hover {
+      box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.2);
+      transform: scale(1.01);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(12, 12, 12);
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__count {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 12px;
+    @media (min-width: 375px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.coupons {
+  padding: 45px 35px;
+  background: $lightGreen;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.coupon {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 375px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.1s;
+  border-radius: 0 0 5px 5px;
+  &:hover {
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.2);
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dashed #dadada;
+    align-items: center;
+    position: relative;
+  }
+
+  &__scissors {
+    position: absolute;
+    bottom: 0;
+    transform: rotate(90deg) translate(50%, 90px);
+  }
+
+  &__head {
+    align-self: stretch;
+    background: $orange;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  &__store-link {
+    margin: 15px 0;
+    width: 40%;
+    text-align: center;
+  }
+
+  &__store-logo {
+    max-width: 100%;
+  }
+
+  &__meta {
+    color: $orange;
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1 0 auto;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    color: #333;
+  }
+
+  &__link {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    display: flex;
+    @media (min-width: 375px) {
+      padding: 0 30px;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: $green;
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 30px;
+  }
+}
