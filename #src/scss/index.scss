@@ -274,11 +274,12 @@ $orange: #ff7519;
   }
 
   &__link {
-    padding: 0 20px;
     margin-bottom: 10px;
     display: flex;
+    position: relative;
+    align-self: center;
+    width: 250px;
     @media (min-width: 375px) {
-      padding: 0 30px;
     }
   }
 
@@ -292,5 +293,38 @@ $orange: #ff7519;
     font-size: 16px;
     text-decoration: none;
     border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    &_type_code {
+      background-color: #fff;
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        display: block;
+        background-color: $green;
+        width: 80%;
+        z-index: -1;
+        box-sizing: border-box;
+        transition: width .1s;
+      }
+      &:hover {
+        &::before {
+          width: 79%;
+        }
+      }
+    }
+
+  }
+
+  &__code {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
   }
 }

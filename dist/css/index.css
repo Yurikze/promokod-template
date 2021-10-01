@@ -469,11 +469,14 @@ table {
 }
 
 .coupon__link {
-  padding: 0 20px;
   margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 250px;
 }
 
 .coupon__btn {
@@ -486,15 +489,47 @@ table {
   font-size: 16px;
   text-decoration: none;
   border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.coupon__btn_type_code {
+  background-color: #fff;
+}
+
+.coupon__btn_type_code::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  display: block;
+  background-color: #6bc368;
+  width: 80%;
+  z-index: -1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: width .1s;
+  transition: width .1s;
+}
+
+.coupon__btn_type_code:hover::before {
+  width: 79%;
+}
+
+.coupon__code {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
 }
 
 @media (min-width: 375px) {
   .stores__text {
     font-size: 14px;
-  }
-
-  .coupon__link {
-    padding: 0 30px;
   }
 }
 
