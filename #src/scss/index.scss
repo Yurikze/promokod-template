@@ -22,6 +22,7 @@
 }
 
 $green: #6bc368;
+$violet: #C98EF0;
 $lightOrange: #f9eee7;
 $lightViolet: #efe7f4;
 $lightGreen: #e8f6e8;
@@ -127,7 +128,16 @@ $orange: #ff7519;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient($lightViolet 95%, $lightGreen);
+  background: $lightViolet;
+  flex-direction: column;
+  color: #222;
+  &__headline {
+    margin: 0 0 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -326,5 +336,75 @@ $orange: #ff7519;
     z-index: 2;
     top: 0;
     left: 0;
+  }
+}
+
+.about {
+  padding: 45px 15px; 
+  background: $lightOrange;
+  color: #222;
+  &__headline {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.category {
+  padding: 55px 15px 30px;
+  background-color: $lightGreen;
+  &__headline {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 165px;
+    grid-template-rows: auto;
+    justify-content: center;
+  }
+  &__li {
+    height: 165px;
+    width: 165px;
+    margin: 15px 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s, transform 0.1s;
+    border-radius: 3px;
+    padding: 15px 10px;
+    color: #222;
+    &:hover {
+      box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.2);
+      transform: scale(1.01);
+    }
+    &-headline {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.3;
+      margin-top: 15px;
+    }
+  }
+  &__icon {
+    width: 66px;
+    height: 66px;
+    background-color: $violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 20px;
   }
 }
